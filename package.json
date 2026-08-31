@@ -1,0 +1,58 @@
+{
+  "name": "plotdrop-local-digitizer",
+  "version": "0.1.0",
+  "description": "A local-first graph digitizer with error-bar, color, brush, and multi-series extraction.",
+  "license": "Apache-2.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "dev": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext dev",
+    "build": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext build",
+    "start": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext start",
+    "desktop:dev": "vite --config vite.desktop.config.ts",
+    "desktop:build": "vite build --config vite.desktop.config.ts",
+    "web:build": "vite build --config vite.desktop.config.ts --mode pwa --outDir ../web-dist",
+    "web:preview": "vite preview --config vite.desktop.config.ts --outDir ../web-dist",
+    "tauri": "tauri",
+    "standalone:dev": "tauri dev",
+    "standalone:build": "tauri build --bundles app",
+    "standalone:dmg": "zsh scripts/build-macos-dmg.sh",
+    "test": "npm run build && node --test tests/rendered-html.test.mjs",
+    "lint": "eslint . --ignore-pattern dist --ignore-pattern desktop-dist --ignore-pattern web-dist --ignore-pattern .next --ignore-pattern src-tauri/target"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.11.1",
+    "@tauri-apps/plugin-dialog": "^2.7.2",
+    "@tauri-apps/plugin-fs": "^2.5.1",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.11.4",
+    "@cloudflare/vite-plugin": "1.54.1",
+    "@eslint/js": "9.39.4",
+    "@next/eslint-plugin-next": "16.2.6",
+    "@openai/sites-vite-plugin": "0.1.0",
+    "@tailwindcss/postcss": "4.2.1",
+    "@types/node": "22.19.19",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.2",
+    "@vitejs/plugin-rsc": "0.5.34",
+    "eslint": "9.39.4",
+    "eslint-plugin-jsx-a11y": "6.10.2",
+    "eslint-plugin-react": "7.37.5",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "globals": "16.4.0",
+    "react-server-dom-webpack": "19.2.8",
+    "tailwindcss": "4.2.1",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.59.3",
+    "vinext": "1.0.0-beta.8",
+    "vite": "8.2.2",
+    "wrangler": "4.127.0"
+  },
+  "type": "module"
+}
