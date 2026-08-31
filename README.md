@@ -4,6 +4,10 @@ Plotdrop은 연구 논문의 그래프 이미지에서 데이터점과 Y 에러�
 
 > Research preview: 추출 결과는 원본 데이터가 아니라 이미지에서 복원한 근삿값입니다. 분석에 쓰기 전 축 보정과 결과를 반드시 검증하세요.
 
+## 바로 사용하기
+
+[Plotdrop 웹앱 열기](https://kiseokchoi.github.io/plotdrop/) — 설치 없이 브라우저에서 실행되며 이미지와 추출 데이터는 사용자의 기기 안에서만 처리됩니다.
+
 ## 두 가지 배포판
 
 - **웹앱/PWA**: 다른 연구자가 주소만 열어 바로 시험하는 기본 배포판입니다. 브라우저에서 설치하면 Dock이나 앱 목록에서 독립 창으로 실행할 수 있고, 첫 실행 후에는 오프라인에서도 동작합니다.
@@ -74,18 +78,6 @@ PWA 결과물은 `web-dist` 폴더에 생성됩니다.
 9. 내보내기 구분자는 스페이스, 쉼표, 탭, 세미콜론 중에서 고릅니다. 스페이스는 gnuplot용 `.dat`, 탭은 `.tsv`, 나머지는 `.csv`로 저장됩니다.
 
 이미지와 추출 데이터는 로컬 기기에서 처리되며 외부 서버로 전송되지 않습니다.
-
-## GitHub 배포 준비
-
-- `.github/workflows/ci.yml`: lint, 웹 테스트, desktop 정적 빌드 검증
-- `.github/workflows/pages.yml`: `main` 브랜치가 갱신되면 설치 가능한 웹앱을 GitHub Pages에 배포
-- `.github/workflows/release.yml`: 버전 태그를 올리면 Apple Silicon/Intel macOS와 Windows 패키지를 draft release로 생성
-- `LICENSE`, `NOTICE`, `THIRD_PARTY_NOTICES.md`: 배포 라이선스 및 고지
-- `CONTRIBUTING.md`, `SECURITY.md`, `CHANGELOG.md`: 공개 저장소 운영 문서
-
-릴리스 워크플로는 태그 `v0.1.0`과 같은 형식으로 시작합니다. 생성된 GitHub Release는 초안이므로 파일과 설명을 확인한 뒤 사람이 직접 공개해야 합니다.
-
-웹앱을 처음 공개할 때는 GitHub 저장소의 **Settings → Pages → Build and deployment → Source**에서 **GitHub Actions**를 선택합니다. 이후 `main` 브랜치가 갱신될 때마다 웹앱이 자동으로 갱신됩니다. 주소는 보통 `https://사용자이름.github.io/저장소이름/` 형식입니다.
 
 ## AI-assisted development
 
