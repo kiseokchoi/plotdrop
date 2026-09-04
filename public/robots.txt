@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kiseokchoi.github.io/plotsift/sitemap.xml

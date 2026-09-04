@@ -1,10 +1,12 @@
 # Changelog
 
-All notable changes to Plotdrop will be documented here.
+All notable changes to PlotSift will be documented here.
 
 ## [Unreleased]
 
 ### Added
+
+- Renamed the project from Plotdrop to PlotSift to establish a distinct, searchable identity.
 
 - Tauri-based standalone desktop application packaging.
 - Native desktop save dialog for DAT, TSV, and CSV exports.

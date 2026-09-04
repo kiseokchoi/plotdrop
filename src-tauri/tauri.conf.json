@@ -1,8 +1,8 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "Plotdrop",
+  "productName": "PlotSift",
   "version": "0.1.0",
-  "identifier": "org.plotdrop.desktop",
+  "identifier": "io.github.kiseokchoi.plotsift",
   "build": {
     "beforeDevCommand": "npm run desktop:dev",
     "devUrl": "http://localhost:1420",
@@ -13,7 +13,7 @@
     "windows": [
       {
         "label": "main",
-        "title": "Plotdrop",
+        "title": "PlotSift",
         "width": 1440,
         "height": 900,
         "minWidth": 1000,
@@ -32,7 +32,7 @@
     "targets": ["app"],
     "category": "Productivity",
     "shortDescription": "Extract graph data and error bars from images.",
-    "longDescription": "Plotdrop is a local-first graph digitizer for extracting points, error bars, and colored series from research figures.",
+    "longDescription": "PlotSift is a local-first graph digitizer for extracting points, error bars, and colored series from research figures.",
     "copyright": "Copyright 2026 K. S. Choi",
     "resources": {
       "../LICENSE": "LICENSE",

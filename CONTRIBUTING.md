@@ -1,6 +1,6 @@
-# Contributing to Plotdrop
+# Contributing to PlotSift
 
-Thank you for helping improve Plotdrop. Bug reports, reproducible sample images, documentation fixes, and focused pull requests are welcome.
+Thank you for helping improve PlotSift. Bug reports, reproducible sample images, documentation fixes, and focused pull requests are welcome.
 
 ## Development setup
 

@@ -1,6 +1,6 @@
 {
-  "name": "Plotdrop — Graph Digitizer",
-  "short_name": "Plotdrop",
+  "name": "PlotSift — Graph Digitizer",
+  "short_name": "PlotSift",
   "description": "Extract graph data points and Y error bars locally in your browser.",
   "lang": "en",
   "start_url": "./",

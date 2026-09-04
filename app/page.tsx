@@ -72,7 +72,7 @@ const messages = {
     waitingImage: "Waiting for image", calibrating: "Calibration {{current}}/4", extractingPoints: "Point extraction", zoomOut: "Zoom out", zoomIn: "Zoom in", fit: "Fit", magnifier: "⌕ Magnifier",
     magnifierPower: "Magnifier zoom", magnifierPosition: "Fixed magnifier position", fixedRight: "Fix right", fixedLeft: "Fix left", replaceImage: "Replace image", openImage: "Open image",
     dropImage: "Drop a graph image here", chooseImage: "or click to choose a PNG, JPG, or WEBP file", staysLocal: "The file is processed only on this computer",
-    initialHint: "Open an image and Plotdrop will guide you through axis calibration.", click: "Click", addSelectPoint: "add/select point", doubleClick: "Double-click", editSelectedPoint: "edit selected point", yError: "Y error", deleteSelected: "delete selected data", undo: "Undo",
+    initialHint: "Open an image and PlotSift will guide you through axis calibration.", click: "Click", addSelectPoint: "add/select point", doubleClick: "Double-click", editSelectedPoint: "edit selected point", yError: "Y error", deleteSelected: "delete selected data", undo: "Undo",
     extractedData: "Extracted data", total: "total", clearSheet: "Clear current sheet", sheets: "Extracted data sheets", addSheet: "＋ Sheet", manualAndColor: "color/manual extraction", manualNoColor: "manual extraction · no color selected",
     spreadsheet: "Extracted data spreadsheet", noPoints: "No points have been extracted yet.", clickGraphPoint: "Click a data point on the graph.", deletePoint: "Delete point {{number}}",
     cellsSelected: "{{cells}} cells · {{rows}} data points selected", selectedPoint: "Selected point #{{number}} · Y {{value}}", selectByCell: "Select data by cell",
@@ -269,7 +269,8 @@ export default function Home() {
   const calibrationLabels = [t("calXMin"), t("calXMax"), t("calYMin"), t("calYMax")];
 
   useEffect(() => {
-    const stored = window.localStorage.getItem("plotdrop-language");
+    const stored = window.localStorage.getItem("plotsift-language")
+      ?? window.localStorage.getItem("plotdrop-language");
     const preference: LanguagePreference = stored === "ko" || stored === "en" ? stored : "auto";
     let active = true;
     queueMicrotask(() => {
@@ -289,12 +290,12 @@ export default function Home() {
 
   useEffect(() => {
     document.documentElement.lang = locale;
-    document.title = locale === "ko" ? "Plotdrop — 로컬 그래프 Digitizer" : "Plotdrop — Local Graph Digitizer";
+    document.title = locale === "ko" ? "PlotSift — 로컬 그래프 Digitizer" : "PlotSift — Local Graph Digitizer";
   }, [locale]);
 
   const changeLanguage = (preference: LanguagePreference) => {
     setLanguagePreference(preference);
-    window.localStorage.setItem("plotdrop-language", preference);
+    window.localStorage.setItem("plotsift-language", preference);
     setLocale(preference === "auto" ? resolveSystemLocale() : preference);
   };
 
@@ -1182,7 +1183,7 @@ export default function Home() {
   return (
     <main className="app-shell">
       <header className="topbar">
-        <div className="brand-mark">D</div><div><h1>Plotdrop</h1><p>{t("tagline")}</p></div>
+        <div className="brand-mark">S</div><div><h1>PlotSift</h1><p>{t("tagline")}</p></div>
         <div className="top-actions">
           <label className="language-select"><span>{t("language")}</span><select value={languagePreference} onChange={(event) => changeLanguage(event.target.value as LanguagePreference)} aria-label={t("language")}><option value="auto">{t("languageAuto")}</option><option value="ko">{t("languageKorean")}</option><option value="en">{t("languageEnglish")}</option></select></label>
           <span className="privacy-badge"><span className="status-dot" />{t("localOnly")}</span><button className="icon-button" title={t("privacyTitle")}>?</button>

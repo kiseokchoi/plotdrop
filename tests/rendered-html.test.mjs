@@ -23,14 +23,14 @@ async function render() {
   );
 }
 
-test("server-renders the Plotdrop application shell", async () => {
+test("server-renders the PlotSift application shell", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
   assert.match(html, /<html lang="en">/i);
-  assert.match(html, /<title>Plotdrop — Local Graph Digitizer<\/title>/i);
+  assert.match(html, /<title>PlotSift — Local Graph Digitizer<\/title>/i);
   assert.match(html, /Processed locally/);
   assert.match(html, /Open image/);
   assert.match(html, /Extracted data/);
@@ -54,15 +54,15 @@ test("keeps the research extraction, standalone, and PWA features wired", async 
   assert.match(page, /extractionScope === "brush"/);
   assert.match(page, /spacingMode === "adaptive"/);
   assert.match(page, /addDataSheet/);
-  assert.match(page, /plotdrop-language/);
+  assert.match(page, /plotsift-language/);
   assert.match(page, /window\.addEventListener\("languagechange", followSystemLanguage\)/);
   assert.match(page, /import\("@tauri-apps\/plugin-dialog"\)/);
   assert.match(page, /writeTextFile\(path, contents\)/);
   assert.match(desktopEntry, /<Home \/>/);
   assert.match(desktopEntry, /serviceWorker\.register\("\.\/sw\.js"\)/);
-  assert.equal(JSON.parse(tauriConfig).productName, "Plotdrop");
+  assert.equal(JSON.parse(tauriConfig).productName, "PlotSift");
   const manifest = JSON.parse(manifestSource);
-  assert.equal(manifest.short_name, "Plotdrop");
+  assert.equal(manifest.short_name, "PlotSift");
   assert.equal(manifest.display, "standalone");
   assert.match(viteConfig, /offlineServiceWorker/);
   assert.match(viteConfig, /base: "\.\/"/);

@@ -1,14 +1,14 @@
-# Plotdrop
+# PlotSift
 
 [English](README.md) | **한국어**
 
-Plotdrop은 연구 논문의 그래프 이미지에서 데이터점과 Y 에러바를 추출하는 로컬 우선(local-first) digitizer입니다. 수동 클릭, 색상 자동 추출, 브러시 제한 추출, 여러 데이터 시트, 스프레드시트형 편집을 한 프로그램에 모았습니다.
+PlotSift는 연구 논문의 그래프 이미지에서 데이터점과 Y 에러바를 추출하는 로컬 우선(local-first) digitizer입니다. 수동 클릭, 색상 자동 추출, 브러시 제한 추출, 여러 데이터 시트, 스프레드시트형 편집을 한 프로그램에 모았습니다.
 
 > Research preview: 추출 결과는 원본 데이터가 아니라 이미지에서 복원한 근삿값입니다. 분석에 쓰기 전 축 보정과 결과를 반드시 검증하세요.
 
 ## 바로 사용하기
 
-[Plotdrop 웹앱 열기](https://kiseokchoi.github.io/plotdrop/) — 설치 없이 브라우저에서 실행되며 이미지와 추출 데이터는 사용자의 기기 안에서만 처리됩니다.
+[PlotSift 웹앱 열기](https://kiseokchoi.github.io/plotsift/) — 설치 없이 브라우저에서 실행되며 이미지와 추출 데이터는 사용자의 기기 안에서만 처리됩니다.
 
 ## 두 가지 배포판
 
@@ -31,8 +31,8 @@ npm run standalone:dmg
 앱만 빠르게 빌드하려면 `npm run standalone:build`를 사용합니다. 완료된 앱과 설치 이미지는 다음 폴더에 생깁니다.
 
 ```text
-src-tauri/target/release/bundle/macos/Plotdrop.app
-src-tauri/target/release/bundle/dmg/Plotdrop_0.1.0_aarch64.dmg
+src-tauri/target/release/bundle/macos/PlotSift.app
+src-tauri/target/release/bundle/dmg/PlotSift_0.1.0_aarch64.dmg
 ```
 
 개발 중 standalone 창을 실행하려면 다음 명령을 사용합니다.
@@ -56,7 +56,7 @@ npm ci
 npm run dev
 ```
 
-그런 다음 `http://localhost:3000`을 엽니다. macOS에서는 기존 `Plotdrop.command`를 더블클릭해 로컬 브라우저 버전을 시작할 수도 있습니다.
+그런 다음 `http://localhost:3000`을 엽니다. macOS에서는 `PlotSift.command`를 더블클릭해 로컬 브라우저 버전을 시작할 수도 있습니다.
 
 설치 가능한 PWA 결과물을 로컬에서 만들고 확인하려면 다음을 실행합니다.
 
@@ -81,7 +81,7 @@ PWA 결과물은 `web-dist` 폴더에 생성됩니다.
 
 ## AI-assisted development
 
-Plotdrop은 연구자의 기능 설계, 사용성 판단, 시험과 수정 지시를 바탕으로 OpenAI GPT/Codex의 코드 생성 지원을 받아 개발되었습니다. 이 사실은 라이선스 조건을 추가하지 않으며, 저장소의 배포 조건은 Apache License 2.0을 따릅니다.
+PlotSift는 연구자의 기능 설계, 사용성 판단, 시험과 수정 지시를 바탕으로 OpenAI GPT/Codex의 코드 생성 지원을 받아 개발되었습니다. 이 사실은 라이선스 조건을 추가하지 않으며, 저장소의 배포 조건은 Apache License 2.0을 따릅니다.
 
 ## License
 

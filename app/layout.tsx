@@ -13,8 +13,18 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Plotdrop — Local Graph Digitizer",
-  description: "Extract data points, colored series, and Y error bars from graph images locally.",
+  metadataBase: new URL("https://kiseokchoi.github.io/plotsift/"),
+  title: "PlotSift — Local Graph Digitizer",
+  description: "Extract data points, colored series, and Y error bars from scientific graph images locally.",
+  applicationName: "PlotSift",
+  keywords: ["graph digitizer", "plot digitizer", "error bars", "scientific figures", "data extraction"],
+  alternates: { canonical: "." },
+  openGraph: {
+    title: "PlotSift — Local Graph Digitizer",
+    description: "Extract data points, colored series, and Y error bars from scientific graph images locally.",
+    type: "website",
+    url: ".",
+  },
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",

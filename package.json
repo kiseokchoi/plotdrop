@@ -1,5 +1,5 @@
 {
-  "name": "plotdrop-local-digitizer",
+  "name": "plotsift-local-digitizer",
   "version": "0.1.0",
   "description": "A local-first graph digitizer with error-bar, color, brush, and multi-series extraction.",
   "license": "Apache-2.0",

@@ -3,7 +3,7 @@ import { defineConfig, type Plugin } from "vite";
 
 function offlineServiceWorker(): Plugin {
   return {
-    name: "plotdrop-offline-service-worker",
+    name: "plotsift-offline-service-worker",
     apply: "build",
     generateBundle(_options, bundle) {
       const bundledFiles = Object.keys(bundle).sort();
@@ -21,7 +21,8 @@ function offlineServiceWorker(): Plugin {
         "./icon-512.png",
         ...bundledFiles.map((file) => `./${file}`),
       ];
-      const source = `const CACHE_PREFIX = "plotdrop-web-";
+      const source = `const CACHE_PREFIX = "plotsift-web-";
+const LEGACY_CACHE_PREFIX = "plotdrop-web-";
 const CACHE_NAME = CACHE_PREFIX + ${JSON.stringify(version)};
 const APP_FILES = ${JSON.stringify(files, null, 2)};
 
@@ -33,7 +34,7 @@ self.addEventListener("install", (event) => {
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys().then((names) => Promise.all(
-      names.filter((name) => name.startsWith(CACHE_PREFIX) && name !== CACHE_NAME)
+      names.filter((name) => (name.startsWith(CACHE_PREFIX) && name !== CACHE_NAME) || name.startsWith(LEGACY_CACHE_PREFIX))
         .map((name) => caches.delete(name)),
     )),
   );
@@ -77,4 +78,3 @@ export default defineConfig(({ mode }) => ({
     emptyOutDir: true,
   },
 }));
-

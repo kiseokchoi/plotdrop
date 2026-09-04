@@ -55,7 +55,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tagName: v__VERSION__
-          releaseName: Plotdrop v__VERSION__
+          releaseName: PlotSift v__VERSION__
           releaseBody: Download the installer for your operating system. This research-preview build is not yet signed with a trusted developer certificate or notarized.
           releaseDraft: true
           prerelease: true
